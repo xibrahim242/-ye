@@ -1,4 +1,8 @@
 <?php
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    header("HTTP/1.1 405 Method Not Allowed");
+    exit("405 Method Not Allowed - Sadece POST istekleri kabul edilir");
+}
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Formdan gelen verileri al
     $email = $_POST['email'];
