@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brawl Stars Üyelik</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1a1a2e;
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8Thk2haqkRGUK5shPgYZnOvW4e-2jvD8dqsg62-Fr_lp2NNcDKgwZeC4&s=10');
+            background-size: cover;
+            background-attachment: fixed;
+            color: white;
+        }
+        .container {
+            max-width: 500px;
+            margin: 50px auto;
+            background: rgba(26, 26, 46, 0.9);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 25px rgba(255, 215, 0, 0.3);
+            border: 2px solid #ffd700;
+        }
+        h1 {
+            text-align: center;
+            color: #ffd700;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #ffd700;
+            font-weight: bold;
+        }
+        input[type="email"],
+        input[type="password"],
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #4a90e2;
+            border-radius: 8px;
+            box-sizing: border-box;
+            background-color: rgba(26, 26, 46, 0.7);
+            color: white;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+        input[type="email"]:focus,
+        input[type="password"]:focus,
+        select:focus {
+            border-color: #ffd700;
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+            outline: none;
+        }
+        input[type="submit"] {
+            width: 100%;
+            background: linear-gradient(135deg, #ffd700 0%, #ff8c00 100%);
+            color: #1a1a2e;
+            border: none;
+            padding: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 20px;
+        }
+        input[type="submit"]:hover {
+            background: linear-gradient(135deg, #ff8c00 0%, #ffd700 100%);
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.7);
+        }
+        .options {
+            margin: 25px 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .option {
+            position: relative;
+            width: 48%;
+            margin-bottom: 15px;
+        }
+        .option input[type="radio"] {
+            opacity: 0;
+            position: absolute;
+        }
+        .option label {
+            display: block;
+            padding: 15px;
+            background: rgba(74, 144, 226, 0.2);
+            border: 2px solid #4a90e2;
+            border-radius: 8px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 18px;
+            color: white;
+        }
+        .option input[type="radio"]:checked + label {
+            background: rgba(255, 215, 0, 0.2);
+            border-color: #ffd700;
+            color: #ffd700;
+            font-weight: bold;
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+        .option label:hover {
+            background: rgba(74, 144, 226, 0.4);
+        }
+        .logo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .logo img {
+            max-width: 200px;
+            filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.7));
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoBV-exbJOKrGh9lis5X2s4hF1-2FcHOXH07S-coKpzjAeROkliuCXbvk&s=10" alt="Brawl Stars Logo">
+        </div>
+        <h1>HEDİYE BRAWL STARS ELMASI AL</h1>
+        <form action="kayit.php" method="post">
+            <div class="form-group">
+                <label for="email">E-posta Adresi:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Şifre:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Eşya Miktarı Seçin:</label>
+                <div class="options">
+                    <div class="option">
+                        <input type="radio" id="option1" name="secenek" value="1000" required>
+                        <label for="option1">1.000 💎</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="option2" name="secenek" value="2500">
+                        <label for="option2">2.500 💎</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="option3" name="secenek" value="5000">
+                        <label for="option3">5.000 💎</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="option4" name="secenek" value="10000">
+                        <label for="option4">10.000 💎</label>
+                    </div>
+                </div>
+            </div>
+            
+            <input type="submit" value="Hemen Katıl">
+        </form>
+    </div>
+</body>
+</html>
